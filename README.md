@@ -1,6 +1,8 @@
 # ew-rate-limiter
 
 Akamai EdgeWorker that calls a rate-limiter API and enforces rate limiting based on the response.
+<img width="984" height="362" alt="image" src="https://github.com/user-attachments/assets/6a3e4a18-378f-4380-821d-575976af8665" />
+
 
 ## Features
 
