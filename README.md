@@ -3,13 +3,11 @@
 Akamai EdgeWorker that calls a rate-limiter API and enforces rate limiting based on the response.
 <img width="984" height="362" alt="image" src="https://github.com/user-attachments/assets/6a3e4a18-378f-4380-821d-575976af8665" />
 
-A request starts the EdgeWorker via the onClientRequest handler. It will make a call to itself on another endpoint to call an API-GW. The API-GW can validate the JWT, can use claims from the JWT, and will call some dummy `ping` endpoint. EdgeWorker will validate the response, and if all is ok, it forwards the request through the backend or serves something from cache. If any issue, just serve the event received from the API-GW.
-
 ## Features
 
 - Checks for an Authorization header and forwards it to a `/rate-limiter` endpoint.
 - If the rate-limiter response is not OK, returns the response body and status to the client.
-- Designed for use in the `onClientRequest` event handler, so it will happen before cache.
+- Designed for use in the `onClientRequest` event handler so that it will happen before cache.
 - Written in TypeScript and built for Akamai EdgeWorkers.
 
 ## Project Structure
@@ -33,7 +31,10 @@ A request starts the EdgeWorker via the onClientRequest handler. It will make a 
 
 1. Clone the repository and install dependencies:
    ```sh
-   npm install
+   npm install --save-dev typescript
+   npm install @types/akamai-edgeworkers
+   mkdir dist
+   mkdir built
    ```
 2. Build the EdgeWorker:
    ```sh
