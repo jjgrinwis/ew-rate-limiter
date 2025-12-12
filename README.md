@@ -3,6 +3,8 @@
 Akamai EdgeWorker that calls a rate-limiter API and enforces rate limiting based on the response.
 <img width="984" height="362" alt="image" src="https://github.com/user-attachments/assets/6a3e4a18-378f-4380-821d-575976af8665" />
 
+Some extra Akamai delivery configuration is required to forward the request to an API-GW that is capable of doing rate-limiting based on claims in the JWT, for example.
+
 ## Features
 
 - Checks for an Authorization header and forwards it to a `/rate-limiter` endpoint.
